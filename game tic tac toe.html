@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <!-- This will link the Javascript to HTML. -->
+     <scrip src="tic tac toe myAttempt.js"></scrip>
+    <!-- This is the style for the game page for browser to see. -->
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: beige;
+            color: #0ff;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .board button {
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+        }
+     </style>
+</head>
+
+<body>
+    <!-- This will show Main heading to browser.-->
+     <h1> Tic-Tac-Toe </h1>
+     <br>
+     <!-- This will explain instructions to browser. -->
+      <p>You are X. The computer is O. Click a square to play!</p>
+      <br>
+      <!-- This is the game board container. -->
+        <div class="board" id="gameBoard"></div>
+       <!-- This puts in the button to reset game. -->
+        <button onclick="startGame()">Start / Reset Game</button>
+</body>
