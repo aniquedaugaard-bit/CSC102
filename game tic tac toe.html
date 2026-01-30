@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
-    <!-- This will link the Javascript to HTML. -->
-     <scrip src="tic tac toe myAttempt.js"></scrip>
     <!-- This is the style for the game page for browser to see. -->
      <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: beige;
-            color: #0ff;
+            color: rgb(11, 77, 11);
         }
 
         button {
@@ -40,5 +38,12 @@
       <!-- This is the game board container. -->
         <div class="board" id="gameBoard"></div>
        <!-- This puts in the button to reset game. -->
-        <button onclick="startGame()">Start / Reset Game</button>
+    <button id="myBtn">Click Here to Play</button>
+    <!-- This will link the Javascript to HTML. -->
+     <scrip src="game tic tac toe.html"></scrip>
+     <script>
+        document.getElementById("myBtn").onclick = function () {
+            window.location.href = "https://gametable.org/games/tic-tac-toe/"
+        };
+    </script>
 </body>
