@@ -1,0 +1,116 @@
+<!-- Anique Daugaard, 1/30/26 -->
+ <!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <meta charset="UFF-8">
+        <!-- Page Title -->
+         <title>Secret Message Page</title>
+         <!-- Creating the Style for page -->
+          <style>
+            body {
+                /* Creating the page backround */
+                background-color: beige;
+                font-family: "Arial" sans-serif;
+                text-align: center;
+            }
+            .container {
+                /* How the container section will look */
+                background-color: white;
+                width: 400px;
+                margin: auto;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 0px gray;
+            }
+            /* Style for input */
+            input {
+                margin: 8px;
+                padding: 8px;
+                width: 80px;
+            }
+            /* How to style the button */
+            button {
+                padding: 10px 20px;
+                background-color: rgb(3, 46, 3);
+                color: white;
+                border: none;
+                border-radius: 5px;
+            }
+            /* How to style message text */
+            #message {
+                margin-top: 15px;
+                font-weight: 20px;
+            }
+            /* How to style secret message */
+            #secret {
+                display: none;
+                margin-top: 20px;
+            }
+          </style>
+    </head>
+    <body>
+        <!-- Main display -->
+         <div class="container"></div>
+         <!-- Heading for page -->
+          <h2>Welcome to the Secret Message Page</h2>
+          <!-- Fun Creative Image -->
+           <img id="memeImage" src="Secret code.jpg">
+           <!-- Form for the Browser to their imput -->
+            <form id="userForm">
+                <!-- Where first name will go -->
+                 <input type="text" id="firstName" placeholder="First Name" required>
+                 <!-- Where last name will go -->
+                  <input type="text" id="lastName" placeholder="Last Name" required>
+                  <!-- Where zip code will go -->
+                   <input type="text" id="zipCode" placeholder="Zip Code" required>
+                   <!-- Adding a submit button -->
+                    <br>
+                    <button type="submit">Reveal Secret</button>
+            </form>
+            <!-- Area for validation messages -->
+             <div id="secret">
+                The scret message is: I'm starting to learn programming!
+             </div>
+             <script>
+                // How to get form element.
+                var form= document.getElementById("userform");
+                // Function without using addEventListener
+                form.onsubmit = function () {
+                    // Get first name value
+                    var first = document.getElementsById("firstName").value;
+                    // Get Last name value
+                    var last = document.getElementById("lastName").value;
+                    // Combine first and last name with space
+                    var fullName = first + " " + last;
+                    // Get zip code value
+                    var zip = document.getElementById(zipCode).value;
+                    // Clear previous messages
+                    document.getElementById("message").innerHTML = "";
+                    // Hide secret message by default
+                    document.getElementById("secret").style.display = "none";
+                    // Check full name length
+                    if (fullName.length > 20) {
+                        document.getElementById("message").innerHTML =
+                        " Name must be 20 characters or less."
+                        return false;
+                    }
+                    // Regular expression for exactly 5 digits
+                    var zipPattern = /^[0-9]{5}$/;
+                    // Verifys zip code
+                    if (!zipPattern.test(zip)) {
+                        document.getElementById("message").innerHTML =
+                        "Zip code must be exactly 5 digits.";
+                        return false;
+                    }
+                    // Show success message
+                    document.getElementById("message").innerHTML =
+                    "Welcome, " + fullName + "!";
+                    // Display of secret message
+                    document.getElementById("secret").style.display = "block";
+                    // Prevent Page refresh
+                    return false;
+                                };
+             </script>
+
+    </body>
+ </html>
