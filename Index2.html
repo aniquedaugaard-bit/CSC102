@@ -1,0 +1,32 @@
+<!-- Anique Daugaard, 1/17/26 -->
+ <!-- DOCTYPE this is the first tag on the page and it tells the browser that this is an HTML5-->
+  <!DOCTYPE html>
+  <!-- the html tag goes next -->
+   <html>
+    <!-- the head sections has info for the browser and search engine -->
+    <head>
+        <title>CSC102 Home Page</title>
+        <!-- add a link to our css file-->
+        <link rel="stylesheet" href="main.css">
+    
+    </head>
+
+    <!-- the body section holds the text and images that we want to show to the user-->
+     <body>
+        <h1>Welcome to my CSC102 Home Page</h1>
+        <!-- create a nav section to hold the menu -->
+         <button id="startBtn" onclick="startMove()">Start</button>
+        <button id="stopBtn" onclick="stopMove()" disabled>Stop</button>
+         <nav>
+            <a href="index.html">Home</a>
+            <br>
+            <a href="boards.html">Boards</a>
+         </nav>
+        <!-- P is paragraph tag; has spacing around it by default -->
+        <p>
+            <!-- img is the image tag -->
+            <img id="memeImage" src="Crocs in snow.jpg">
+        </p>
+     </body>
+     <script src="JS tester.js"></script>
+   </html>
