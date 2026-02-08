@@ -1,3 +1,4 @@
+// Anique Daugard 2/3/2026
 function startMove() {
   console.log("Start clicked");
 }
@@ -27,7 +28,7 @@ function startMove() {
     meme.style.top = y + "px";
   }, 100);
 }
-
+// Enables stop image movement. 
 function stopMove() {
   clearInterval(moveInterval);
   moveInterval = null;
@@ -37,3 +38,4 @@ function stopMove() {
   document.getElementById("stopBtn").disabled = true;
 }
 console.log("JavaScript connected!");
+// Used AI assitance: Chat GBT
