@@ -1,0 +1,56 @@
+<!-- Anique Daugaard, 2/15/26 -->
+ <!-- DOCTYPE this is the first tag on the page and it tells the browser that this is an HTML5 -->
+<!DOCTYPE html>
+<html lang="en">
+    <!-- the head sections has info for the browser and search engine -->
+    <head>
+        <meta charset="UFF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Palindrome-checker</title>
+        <!-- add a link to our css file for creative element -->
+        <link rel="stylesheet" href="Palindrome Checker.css">
+    </head>
+    <!-- the body section holds the text and images that we want to show to the user -->
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1>Palindrome Checker</h1>
+                <!-- P is paragraph tag;  -->
+                <p>
+                    A palidrome is a word or phrase that reads the same backwards as forward.
+                </p>
+            </header>
+        </div>
+        <form id="work-input-form">
+            <!-- Text input where user types word -->
+            <input id="word-input" placeholder="Enter your work/sentence">
+            <input type="submit" value="submit" id="submit-button">
+            <span id="result"></span>
+        </form>
+        <!-- JavaScript Section -->
+        <script>
+            let inputForm = document.getElementById('word-input-form');
+            function checkPalindrome(string){
+                string = string.toLowerCase().replace(/\s/g,'').replace(/,/g,'').replace(/!/g,'').replace(/\./g,'').replace(/\?/g,'');
+                let splitString = string.split('');
+                console.log(splitString)
+                let reversedString = [];
+                for (let i = splitString.length-1;i>= 0;i--){
+                    reversedString.push(splitString[i])
+                }
+                if (reversedString.join('') === splitString.join('')){
+                    document.getElementById('result').innerHTML = 'Your word is a palindrome';
+                }else{
+                    document.getElementById('result').innerHTML = 'Your word is not a palindrome';
+                }
+            }
+            document.getElementById('submit-button').addEventListener('click', (event) => {
+                event.preventDefault();
+                let word= document.getElementById('word-input').value;
+                checkPalindrome(word);
+            })
+        </script>
+            
+    </body>
+</html>
+<!-- Used Youtube video to assist -->
