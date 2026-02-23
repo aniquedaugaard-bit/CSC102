@@ -33,14 +33,18 @@
         <!-- JavaScript Section -->
         <script>
             let inputForm = document.getElementById('word-input-form');
+            // This function checks whether a word is a palindrome.
             function checkPalindrome(string){
+                // These are string manipulation methods.(toLowerCase, replace,and split)
                 string = string.toLowerCase().replace(/\s/g,'').replace(/,/g,'').replace(/!/g,'').replace(/\./g,'').replace(/\?/g,'');
                 let splitString = string.split('');
                 console.log(splitString)
                 let reversedString = [];
+                // This shows how a loop starts of the array and switches letters into a new array in reverse order.
                 for (let i = splitString.length-1;i>= 0;i--){
                     reversedString.push(splitString[i])
                 }
+                // This shows Decision Logic (if and else)
                 if (reversedString.join('') === splitString.join('')){
                     document.getElementById('result').innerHTML = 'Your word is a palindrome';
                 }else{
